@@ -417,8 +417,17 @@ function AntDPie() {
   };
 
   const apexData = {
-    series: [44, 55, 41, 17, 15],
+    series: [44, 55, 41, 17, 15, 12, 23, 4, 15, 27],
     options: {
+      legend: {
+        show: true,
+        showForSingleSeries: false,
+        showForNullSeries: true,
+        showForZeroSeries: true,
+        position: 'bottom',
+        horizontalAlign: 'center', 
+        floating: false,
+      },
       chart: {
         type: "donut",
       },
@@ -429,8 +438,33 @@ function AntDPie() {
             chart: {
               width: 200,
             },
-            legend: {
-              position: "bottom",
+          },
+        },
+      ],
+    },
+  };
+
+  const apexData2 = {
+    series: [44, 55, 41, 17, 15, 12, 23, 4, 15, 27, 1, 2, 3, 4, 5, 6, 7, 8,9,10, 18, 21],
+    options: {
+      legend: {
+        show: true,
+        showForSingleSeries: false,
+        showForNullSeries: true,
+        showForZeroSeries: true,
+        position: 'bottom',
+        horizontalAlign: 'center', 
+        floating: false,
+      },
+      chart: {
+        type: "donut",
+      },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200,
             },
           },
         },
@@ -503,7 +537,13 @@ function AntDPie() {
           </Card>
         </Col>
         <Col span={8} style={{ padding: "10px" }}>
-          <Card title="Apex Charts">test</Card>
+          <Card title="Apex Charts">
+            <Chart
+                options={apexData2.options}
+                series={apexData2.series}
+                type="donut"
+            />
+          </Card>
         </Col>
         <Col span={8} style={{ padding: "10px" }}>
           <Card title="Apex Charts">test</Card>
