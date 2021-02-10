@@ -1,5 +1,6 @@
 import React from "react";
 import { Pie } from "@ant-design/charts";
+import Chart from "react-apexcharts";
 import { Row, Col, Card } from "antd";
 
 // #1890ff
@@ -415,6 +416,28 @@ function AntDPie() {
     ],
   };
 
+  const apexData = {
+    series: [44, 55, 41, 17, 15],
+    options: {
+      chart: {
+        type: "donut",
+      },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200,
+            },
+            legend: {
+              position: "bottom",
+            },
+          },
+        },
+      ],
+    },
+  };
+
   return (
     <>
       <Row gutter={[16, 16]}>
@@ -467,6 +490,23 @@ function AntDPie() {
           <Card title="AntD Chart - Bottom Legend">
             <Pie {...archConfig} data={salesPieData} />
           </Card>
+        </Col>
+      </Row>
+      <Row gutter={[16, 16]}>
+        <Col span={8}>
+          <Card title="AntD Chart - Bottom Legend">
+            <Chart
+              options={apexData.options}
+              series={apexData.series}
+              type="donut"
+            />
+          </Card>
+        </Col>
+        <Col span={8}>
+          <Card title="AntD Chart - Bottom Legend"></Card>
+        </Col>
+        <Col span={8}>
+          <Card title="AntD Chart - Bottom Legend"></Card>
         </Col>
       </Row>
     </>
