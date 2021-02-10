@@ -476,24 +476,24 @@ function AntDPie() {
         </Col>
       </Row>
       <Row gutter={[16, 16]}>
-        <Col span={8}>
+        <Col span={8} style={{ padding: "10px" }}>
           <Card title="AntD Chart - Bottom Legend">
             <Pie {...archConfig} data={salesPieData} />
           </Card>
         </Col>
-        <Col span={8}>
+        <Col span={8} style={{ padding: "10px" }}>
           <Card title="AntD Chart - Bottom Legend">
             <Pie {...archConfig} data={middlePieData} />
           </Card>
         </Col>
-        <Col span={8}>
+        <Col span={8} style={{ padding: "10px" }}>
           <Card title="AntD Chart - Bottom Legend">
             <Pie {...archConfig} data={salesPieData} />
           </Card>
         </Col>
       </Row>
       <Row gutter={[16, 16]}>
-        <Col span={8}>
+        <Col span={8} style={{ padding: "10px" }}>
           <Card title="AntD Chart - Bottom Legend">
             <Chart
               options={apexData.options}
@@ -502,11 +502,11 @@ function AntDPie() {
             />
           </Card>
         </Col>
-        <Col span={8}>
-          <Card title="AntD Chart - Bottom Legend"></Card>
+        <Col span={8} style={{ padding: "10px" }}>
+          <Card title="AntD Chart - Bottom Legend">test</Card>
         </Col>
-        <Col span={8}>
-          <Card title="AntD Chart - Bottom Legend"></Card>
+        <Col span={8} style={{ padding: "10px" }}>
+          <Card title="AntD Chart - Bottom Legend">test</Card>
         </Col>
       </Row>
     </>
