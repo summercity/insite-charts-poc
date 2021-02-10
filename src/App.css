@@ -12,7 +12,21 @@
   background-color: #1890ff;
 }
 
-.ant-menu-light, .ant-menu-sub {
+.ant-menu-light,
+.ant-menu-sub {
   background-color: #000000 !important;
   color: #fff;
+}
+
+.apexcharts-legend {
+  margin: 0 auto;
+  margin-top: 200px;
+  /* background-color: #eee; */
+  max-width: 320px;
+  height: 55px;
+  min-height: 50 !important;
+  max-height: 50 !important;
+  overflow: scroll;
+  padding: 0px !important;
+  /* position: relative !important; */
 }

@@ -419,34 +419,38 @@ function AntDPie() {
   const apexData = {
     series: [44, 55, 41, 17, 15, 12, 23, 4, 15, 27],
     options: {
-      legend: {
-        show: true,
-        showForSingleSeries: false,
-        showForNullSeries: true,
-        showForZeroSeries: true,
-        position: 'bottom',
-        horizontalAlign: 'center', 
-        floating: false,
-      },
-      chart: {
-        type: "donut",
-      },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200,
+        legend: {
+          show: true,
+          showForSingleSeries: false,
+          showForNullSeries: true,
+          showForZeroSeries: true,
+          position: 'bottom',
+          horizontalAlign: 'center', 
+          floating: false,
+        //   height: 50,
+        //   offsetX: 0,
+        //   offsetY: 0,
+        },
+        chart: {
+          type: "donut",
+        },
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200,
+              },
             },
           },
-        },
-      ],
-    },
-  };
+        ],
+      },
+    };
 
   const apexData2 = {
     series: [44, 55, 41, 17, 15, 12, 23, 4, 15, 27, 1, 2, 3, 4, 5, 6, 7, 8,9,10, 18, 21],
     options: {
+      width: 100,
       legend: {
         show: true,
         showForSingleSeries: false,
@@ -455,6 +459,7 @@ function AntDPie() {
         position: 'bottom',
         horizontalAlign: 'center', 
         floating: false,
+        // height: 60,
       },
       chart: {
         type: "donut",
@@ -527,7 +532,7 @@ function AntDPie() {
         </Col>
       </Row>
       <Row gutter={[16, 16]}>
-        <Col span={8} style={{ padding: "10px" }}>
+        <Col span={8} style={{ padding: "10px"}}>
           <Card title="Apex Charts">
             <Chart
               options={apexData.options}
@@ -536,7 +541,7 @@ function AntDPie() {
             />
           </Card>
         </Col>
-        <Col span={8} style={{ padding: "10px" }}>
+        <Col span={8} style={{ padding: "10px"}}>
           <Card title="Apex Charts">
             <Chart
                 options={apexData2.options}
@@ -546,7 +551,13 @@ function AntDPie() {
           </Card>
         </Col>
         <Col span={8} style={{ padding: "10px" }}>
-          <Card title="Apex Charts">test</Card>
+          <Card title="Apex Charts">
+            <Chart
+              options={apexData.options}
+              series={apexData.series}
+              type="donut"
+            />
+          </Card>
         </Col>
       </Row>
     </>
