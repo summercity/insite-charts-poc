@@ -494,7 +494,7 @@ function AntDPie() {
       </Row>
       <Row gutter={[16, 16]}>
         <Col span={8} style={{ padding: "10px" }}>
-          <Card title="AntD Chart - Bottom Legend">
+          <Card title="Apex Charts">
             <Chart
               options={apexData.options}
               series={apexData.series}
@@ -503,10 +503,10 @@ function AntDPie() {
           </Card>
         </Col>
         <Col span={8} style={{ padding: "10px" }}>
-          <Card title="AntD Chart - Bottom Legend">test</Card>
+          <Card title="Apex Charts">test</Card>
         </Col>
         <Col span={8} style={{ padding: "10px" }}>
-          <Card title="AntD Chart - Bottom Legend">test</Card>
+          <Card title="Apex Charts">test</Card>
         </Col>
       </Row>
     </>
