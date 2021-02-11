@@ -1,5 +1,5 @@
 import React from "react";
-import { Pie } from "@ant-design/charts";
+import { Pie, BidirectionalBar } from "@ant-design/charts";
 import Chart from "react-apexcharts";
 import { Row, Col, Card } from "antd";
 
@@ -419,36 +419,59 @@ function AntDPie() {
   const apexData = {
     series: [44, 55, 41, 17, 15, 12, 23, 4, 15, 27],
     options: {
-        legend: {
-          show: true,
-          showForSingleSeries: false,
-          showForNullSeries: true,
-          showForZeroSeries: true,
-          position: 'bottom',
-          horizontalAlign: 'center', 
-          floating: false,
+      legend: {
+        show: true,
+        showForSingleSeries: false,
+        showForNullSeries: true,
+        showForZeroSeries: true,
+        position: "bottom",
+        horizontalAlign: "center",
+        floating: false,
         //   height: 50,
         //   offsetX: 0,
         //   offsetY: 0,
-        },
-        chart: {
-          type: "donut",
-        },
-        responsive: [
-          {
-            breakpoint: 480,
-            options: {
-              chart: {
-                width: 200,
-              },
+      },
+      chart: {
+        type: "donut",
+      },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200,
             },
           },
-        ],
-      },
-    };
+        },
+      ],
+    },
+  };
 
   const apexData2 = {
-    series: [44, 55, 41, 17, 15, 12, 23, 4, 15, 27, 1, 2, 3, 4, 5, 6, 7, 8,9,10, 18, 21],
+    series: [
+      44,
+      55,
+      41,
+      17,
+      15,
+      12,
+      23,
+      4,
+      15,
+      27,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      18,
+      21,
+    ],
     options: {
       width: 100,
       legend: {
@@ -456,8 +479,8 @@ function AntDPie() {
         showForSingleSeries: false,
         showForNullSeries: true,
         showForZeroSeries: true,
-        position: 'bottom',
-        horizontalAlign: 'center', 
+        position: "bottom",
+        horizontalAlign: "center",
         floating: false,
         // height: 60,
       },
@@ -474,6 +497,160 @@ function AntDPie() {
           },
         },
       ],
+    },
+  };
+
+  const series = [
+    {
+      name: "Registrations",
+      type: "column",
+      data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16],
+    },
+    {
+      name: "Vistis",
+      type: "line",
+      data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+    },
+  ];
+
+  const apexChart = {
+    series: [
+      {
+        name: "Registrations",
+        type: "column",
+        data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16],
+      },
+      {
+        name: "Visits",
+        type: "line",
+        data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+      },
+    ],
+    chart: {
+      height: 350,
+      type: "line",
+    },
+    stroke: {
+      width: [0, 4],
+    },
+    title: {
+      text: "Website Visits",
+    },
+    dataLabels: {
+      enabled: true,
+      enabledOnSeries: [1],
+    },
+    labels: [
+      "01 Jan 2001",
+      "02 Jan 2001",
+      "03 Jan 2001",
+      "04 Jan 2001",
+      "05 Jan 2001",
+      "06 Jan 2001",
+      "07 Jan 2001",
+      "08 Jan 2001",
+      "09 Jan 2001",
+      "10 Jan 2001",
+      "11 Jan 2001",
+      "12 Jan 2001",
+    ],
+    xaxis: {
+      type: "datetime",
+    },
+    yaxis: [
+      {
+        title: {
+          text: "Registrations",
+        },
+      },
+      {
+        opposite: true,
+        title: {
+          text: "Visits",
+        },
+      },
+    ],
+  };
+
+  // Antd Visits Charts
+  const dataChart = [
+    {
+      month: "Jan 01",
+      Registrations: 13.4,
+      Visits: 12.3,
+    },
+    {
+      month: "Jan 02",
+      Registrations: 14.4,
+      Visits: 6.3,
+    },
+    {
+      month: "Jan 03",
+      Registrations: 18.4,
+      Visits: 8.3,
+    },
+    {
+      month: "Jan 04",
+      Registrations: 34.4,
+      Visits: 13.8,
+    },
+    {
+      month: "Jan 05",
+      Registrations: 44.4,
+      Visits: 19.5,
+    },
+    {
+      month: "Jan 06",
+      Registrations: 24.4,
+      Visits: 18.8,
+    },
+    {
+      month: "Jan 07",
+      Registrations: 54.4,
+      Visits: 24.7,
+    },
+    {
+      month: "Jan 08",
+      Registrations: 104.4,
+      Visits: 5.3,
+    },
+    {
+      month: "Jan 09",
+      Registrations: 165.2,
+      Visits: 72.9,
+    },
+  ];
+  const configChart = {
+    data: dataChart,
+    width: 400,
+    height: 400,
+    xField: "month",
+    xAxis: { position: "bottom" },
+    interactions: [{ type: "active-region" }],
+    yField: ["Registrations", "Visits"],
+    tooltip: {
+      shared: true,
+      showMarkers: false,
+    },
+  };
+
+  var configChart2 = {
+    data: dataChart,
+    width: 400,
+    height: 400,
+    layout: "vertical",
+    xField: "month",
+    yField: ["Registrations", "Visits"],
+    yAxis: {
+      Registrations: { nice: true },
+      Visitis: {
+        min: 0,
+        max: 100,
+      },
+    },
+    tooltip: {
+      shared: true,
+      showMarkers: false,
     },
   };
 
@@ -532,7 +709,7 @@ function AntDPie() {
         </Col>
       </Row>
       <Row gutter={[16, 16]}>
-        <Col span={8} style={{ padding: "10px"}}>
+        <Col span={8} style={{ padding: "10px" }}>
           <Card title="Apex Charts">
             <Chart
               options={apexData.options}
@@ -541,12 +718,12 @@ function AntDPie() {
             />
           </Card>
         </Col>
-        <Col span={8} style={{ padding: "10px"}}>
+        <Col span={8} style={{ padding: "10px" }}>
           <Card title="Apex Charts">
             <Chart
-                options={apexData2.options}
-                series={apexData2.series}
-                type="donut"
+              options={apexData2.options}
+              series={apexData2.series}
+              type="donut"
             />
           </Card>
         </Col>
@@ -557,6 +734,32 @@ function AntDPie() {
               series={apexData.series}
               type="donut"
             />
+          </Card>
+        </Col>
+      </Row>
+      <Row>
+        <Col span={24}>
+          <Card title="Apex Charts">
+            <Chart
+              options={apexChart}
+              series={series}
+              type="line"
+              style={{ width: "800px", margin: "0 auto" }}
+            />
+          </Card>
+        </Col>
+      </Row>
+      <Row>
+        <Col span={24}>
+          <Card title="Antd Charts Website Visits">
+            <BidirectionalBar {...configChart} />
+          </Card>
+        </Col>
+      </Row>
+      <Row>
+        <Col span={24}>
+          <Card title="Antd Charts Website Visits">
+            <BidirectionalBar {...configChart2} />
           </Card>
         </Col>
       </Row>
